@@ -53,9 +53,24 @@ AWGN is subsequently added to the received signal.
 
 ## Results
 
-BER performance is evaluated over an Eb/N0 range from 0 dB to 20 dB.
+### BER Performance
 
-The static multipath channel exhibits a rapid BER reduction as Eb/N0 increases. In contrast, the block-fading channel experiences significantly higher BER because deep fades can strongly attenuate individual OFDM symbols.
+The BER performance of the coded OFDM link is evaluated over an Eb/N0 range from 0 dB to 20 dB for both channel models.
+
+![BER performance](Results/Figure_1.png)
+
+The static three-tap multipath channel shows a rapid improvement in BER as Eb/N0 increases. Its BER decreases from approximately `4.1 × 10^-1` at 0 dB to `2.2 × 10^-4` at 10 dB, and falls below `10^-5` at approximately 12 dB.
+
+In comparison, the block-fading multipath channel exhibits substantially slower BER improvement. Its BER is approximately `4.2 × 10^-2` at 10 dB, `6.8 × 10^-3` at 15 dB, and `9.2 × 10^-4` at 20 dB.
+
+The performance difference illustrates the impact of random fading on the OFDM link. Although cyclic-prefix OFDM and frequency-domain Zero-Forcing equalization mitigate multipath-induced inter-symbol interference, deep fades can strongly attenuate individual subcarriers and amplify noise during Zero-Forcing equalization.
+
+### Key Observations
+
+- The static multipath channel achieves reliable performance at significantly lower Eb/N0.
+- The block-fading channel produces a much higher BER because of random channel attenuation and deep fades.
+- Increasing Eb/N0 consistently improves BER performance for both channel models.
+- The results demonstrate the importance of channel conditions in determining the performance of a coded OFDM system.
 
 ## Tools
 
